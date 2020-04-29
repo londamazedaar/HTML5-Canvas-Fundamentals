@@ -12,15 +12,35 @@ window.onload = function () {
         // ctx.stroke();
         // ctx.fill();
 
-    // =====> Drawing a Bar Graph
+    // =====> Drawing a Bar Graph Normally
+
+        // const scores = [100,88,92,75,63,33];
+        // let width = 20;
+        // let x = 0;
+        // let y = 0;
+        // ctx.fillStyle = 'black';
+        // scores.forEach(ele => {
+        //     ctx.fillRect(x, 100 - this.parseInt(ele), width, this.parseInt(ele));
+        //     x = x + width + 5;
+        // })
+
+    // =====> Drawing a Bar Graph using transforms(translate)
 
         const scores = [100,88,92,75,63,33];
+        scores.reverse();
         let width = 20;
         let x = 0;
         let y = 0;
-        ctx.fillStyle = 'black';
+        
+        ctx.translate(200,200);
+        ctx.rotate(Math.PI);
+        ctx.fillStyle = 'green';
         scores.forEach(ele => {
-            ctx.fillRect(x, 100 - this.parseInt(ele), width, this.parseInt(ele));
-            x = x + width + 5;
-        })
+            ctx.fillRect(x, y, width, this.parseInt(ele));
+            x = x  + width + 5;
+        });
+        ctx.rotate(Math.PI);
+        ctx.translate(-200,-200);
+        ctx.fillRect(0,0,10,10);
+
 }
