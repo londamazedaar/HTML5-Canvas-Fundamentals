@@ -51,23 +51,40 @@ window.onload = function () {
         // ctx.stroke();
         // ctx.fill();
 
+
+
     // =====> Using arcTo() for rounding corners
 
+        // ctx.beginPath();
+        // ctx.moveTo(80,50);
+
+        // // top right
+        // ctx.arcTo(210,50, 210, 70, 0);
+
+        // // bottom right
+        // ctx.arcTo(210, 200, 160, 200, 0);
+
+        // // bottom left
+        // ctx.arcTo(60,200,60,180,20);
+
+        // // top left
+        // ctx.arcTo(60, 50, 100, 50, 20);
+
+        // ctx.stroke();
+
+    // =====> Drawing lines
+
+        ctx.strokeStyle = 'green';
+        ctx.lineWidth = 10;
+        
         ctx.beginPath();
-        ctx.moveTo(80,50);
-
-        // top right
-        ctx.arcTo(210,50, 210, 70, 20);
-
-        // bottom right
-        ctx.arcTo(210, 200, 160, 200, 20);
-
-        // bottom left
-        ctx.arcTo(60,200,60,180,20);
-
-        // top left
-        ctx.arcTo(60, 50, 100, 50, 20);
-
+        ctx.moveTo(100,100);
+        ctx.lineTo(200,100);
+        ctx.lineTo(200,300);
+        ctx.lineTo(100,100);
+        // ctx.miterLimit = 1;
+        // ctx.lineCap = 'round';
+        ctx.closePath();
         ctx.stroke();
 
 }
