@@ -89,14 +89,26 @@ window.onload = function () {
 
     // =====> Drawing Bezier Curve
 
+        // ctx.strokeStyle = 'red';
+        // ctx.lineWidth = 2;
+        // ctx.fillStyle = 'green';
+        // ctx.beginPath();
+        // ctx.moveTo(50,50);
+        // ctx.bezierCurveTo(200,400,400,400,400,50);
+        // ctx.lineTo(50,50);
+        // ctx.closePath();
+        // ctx.stroke();
+        // ctx.fill();
+
+    // =====> Drawing Quadratic Curve
+
         ctx.strokeStyle = 'red';
         ctx.lineWidth = 2;
-        ctx.fillStyle = 'green';
         ctx.beginPath();
         ctx.moveTo(50,50);
-        ctx.bezierCurveTo(200,400,400,400,400,50);
+        ctx.quadraticCurveTo(50,500,500,50);
         ctx.lineTo(50,50);
         ctx.closePath();
         ctx.stroke();
-        ctx.fill();
+
 }
