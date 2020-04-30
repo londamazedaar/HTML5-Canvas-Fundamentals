@@ -74,17 +74,29 @@ window.onload = function () {
 
     // =====> Drawing lines
 
-        ctx.strokeStyle = 'green';
-        ctx.lineWidth = 10;
+        // ctx.strokeStyle = 'green';
+        // ctx.lineWidth = 10;
         
+        // ctx.beginPath();
+        // ctx.moveTo(100,100);
+        // ctx.lineTo(200,100);
+        // ctx.lineTo(200,300);
+        // ctx.lineTo(100,100);
+        // // ctx.miterLimit = 1;
+        // // ctx.lineCap = 'round';
+        // ctx.closePath();
+        // ctx.stroke();
+
+    // =====> Drawing Bezier Curve
+
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 2;
+        ctx.fillStyle = 'green';
         ctx.beginPath();
-        ctx.moveTo(100,100);
-        ctx.lineTo(200,100);
-        ctx.lineTo(200,300);
-        ctx.lineTo(100,100);
-        // ctx.miterLimit = 1;
-        // ctx.lineCap = 'round';
+        ctx.moveTo(50,50);
+        ctx.bezierCurveTo(200,400,400,400,400,50);
+        ctx.lineTo(50,50);
         ctx.closePath();
         ctx.stroke();
-
+        ctx.fill();
 }
