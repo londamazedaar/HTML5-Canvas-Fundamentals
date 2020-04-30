@@ -113,11 +113,28 @@ window.onload = function () {
 
     // =====> Filling, Stroking and MeasuringText
 
-        const text = 'Hello World';
+        // const text = 'Hello World';
+        // ctx.font = '30pt Arial';
+        // ctx.strokeText(text, 100,100);
+        // ctx.fillText(text, 100,100);
+        // let some = ctx.measureText(text).width;
+        // this.console.log(some);
+
+    // =====> Canvas transform with texts
+
         ctx.font = '30pt Arial';
-        ctx.strokeText(text, 100,100);
-        ctx.fillText(text, 100,100);
-        let some = ctx.measureText(text).width;
-        this.console.log(some);
+        ctx.fillText('Regular Text', 100, 100);
+
+        ctx.save();
+
+        ctx.rotate(0.5 * this.Math.PI);
+        ctx.strokeText('Rotated Text', 200, -300);
+
+        ctx.restore();
+
+        ctx.fillText('Normal canvas rendering', 500, 500);
+
+
+
 
 }
