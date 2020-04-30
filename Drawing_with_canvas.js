@@ -102,13 +102,22 @@ window.onload = function () {
 
     // =====> Drawing Quadratic Curve
 
-        ctx.strokeStyle = 'red';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(50,50);
-        ctx.quadraticCurveTo(50,500,500,50);
-        ctx.lineTo(50,50);
-        ctx.closePath();
-        ctx.stroke();
+        // ctx.strokeStyle = 'red';
+        // ctx.lineWidth = 2;
+        // ctx.beginPath();
+        // ctx.moveTo(50,50);
+        // ctx.quadraticCurveTo(50,500,500,50);
+        // ctx.lineTo(50,50);
+        // ctx.closePath();
+        // ctx.stroke();
+
+    // =====> Filling, Stroking and MeasuringText
+
+        const text = 'Hello World';
+        ctx.font = '30pt Arial';
+        ctx.strokeText(text, 100,100);
+        ctx.fillText(text, 100,100);
+        let some = ctx.measureText(text).width;
+        this.console.log(some);
 
 }
