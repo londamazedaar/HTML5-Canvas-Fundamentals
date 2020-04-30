@@ -122,17 +122,44 @@ window.onload = function () {
 
     // =====> Canvas transform with texts
 
-        ctx.font = '30pt Arial';
-        ctx.fillText('Regular Text', 100, 100);
+        // ctx.font = '30pt Arial';
+        // ctx.fillText('Regular Text', 100, 100);
 
-        ctx.save();
+        // ctx.save();
 
-        ctx.rotate(0.5 * this.Math.PI);
-        ctx.strokeText('Rotated Text', 200, -300);
+        // ctx.rotate(0.5 * this.Math.PI);
+        // ctx.strokeText('Rotated Text', 200, -300);
 
-        ctx.restore();
+        // ctx.restore();
 
-        ctx.fillText('Normal canvas rendering', 500, 500);
+        // ctx.fillText('Normal canvas rendering', 500, 500);
+
+
+    // =====> Drawing Image onto canvas
+
+        var img = new this.Image();
+
+        img.src = 'html.png';
+
+        img.onload = function(){
+            drawImage();
+        };
+        
+
+        function drawImage(){
+            var destX = 100;
+            var destY = 100;
+            var destWidth = 100;
+            var destHeight = 100;
+            
+            ctx.drawImage(img, destX, destY);
+
+            // ----> Below is pattern creating using image
+
+            var pattern = ctx.createPattern(img, 'repeat');
+            ctx.fillStyle = pattern;
+            ctx.fillRect(300,300,600,600);
+        }
 
 
 
