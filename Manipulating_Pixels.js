@@ -17,14 +17,28 @@ window.onload = function () {
 
     // =====> Rendering Radial Gradient
 
-        ctx.strokeStyle = 'black';
+        // ctx.strokeStyle = 'black';
+        // let gradient = ctx.createRadialGradient(250,250,300,375,375,300);
+        // gradient.addColorStop(0, 'white');
+        // gradient.addColorStop(0.5, 'lightgreen');
+        // gradient.addColorStop(1, 'lightblue');
+        // ctx.fillStyle = gradient;
+        // ctx.arc(300,300,300,0,2*this.Math.PI,false);
+        // ctx.stroke();
+        // ctx.fill();
 
-        let gradient = ctx.createRadialGradient(250,250,300,375,375,300);
-        gradient.addColorStop(0, 'white');
-        gradient.addColorStop(0.5, 'lightgreen');
-        gradient.addColorStop(1, 'lightblue');
-        ctx.fillStyle = gradient;
-        ctx.arc(300,300,300,0,2*this.Math.PI,false);
-        ctx.stroke();
-        ctx.fill();
+    // =====> Using Transform
+
+        ctx.font = '30pt Arial';
+        ctx.save();
+        ctx.translate(200,350);
+        ctx.rotate(-0.5*Math.PI);
+        ctx.scale(2,2);
+
+        let rtext = 'Rotated';
+        ctx.fillText(rtext,0,0);
+        ctx.restore();
+
+        ctx.fillRect(250,100,200,100);
+
 }
